@@ -1,0 +1,898 @@
+@charset "utf-8";
+@use "common" as common;
+@use "_mixins/_mq" as mixins;
+
+.st00 {
+    fill: none;
+    stroke: #231815;
+    stroke-dasharray: 2000;
+    stroke-dashoffset: 0;
+    stroke-width: 15.3212;
+    -webkit-animation: circle 3s ease-in 0s;
+    animation: circle 3s ease-in 0s;
+}
+.st01 {
+    fill: #231815;
+    stroke: #231815;
+    stroke-dasharray: 400;
+    stroke-dashoffset: 0;
+    stroke-width: 0.25;
+    -webkit-animation: hello 6s ease-in 0s;
+    animation: hello 6s ease-in 0s;
+}
+
+.st-circle {
+    fill: none;
+    stroke: #231815;
+    stroke-dasharray: 2000;
+    stroke-dashoffset: 0;
+    stroke-width: 15.3212;
+    -webkit-animation: circle 11s ease-in -3s;
+    animation: circle 11s ease-in -3s;
+}
+
+.header-inner {
+    position: relative;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 90%;
+    text-align: center;
+    margin: auto;
+    z-index: 1;
+    h2 {
+        position: absolute;
+        bottom: 10%;
+        left: 0.35em;
+        font-size: 62px;
+        letter-spacing: 0.2em;
+        color: #fff;
+        text-align: left;
+        @include common.trans30;
+        @include mixins.max-screen(mixins.$lg) {
+            // MAX- PCタブL
+            font-size: 56px;
+        }
+        @media screen and (max-height: 700px) {
+            font-size: 56px;
+        }
+        @include mixins.max-screen(mixins.$md) {
+            // MAX- タブ
+            left: 0.25em;
+            font-size: 50px;
+        }
+        @media screen and (max-width: 768px) {
+            left: 0.15em;
+            font-size: 45px;
+        }
+        @include mixins.max-screen(mixins.$sm) {
+            // MAX- スマホL
+            left: 0.5em;
+            font-size: 38px;
+            letter-spacing: 0.15em;
+        }
+        @include mixins.max-screen(mixins.$xs) {
+            // MAX- スマホ
+            font-size: 34px;
+            letter-spacing: 0.1em;
+        }
+        &.on {
+            opacity: 1;
+        }
+        &.pc {
+            @include mixins.max-screen(mixins.$sm) {
+                // MAX- スマホL
+                display: none !important;
+            }
+        }
+        .sp {
+            display: none !important;
+            @include mixins.max-screen(mixins.$sm) {
+                // MAX- スマホL
+                display: block !important;
+            }
+        }
+    }
+}
+
+.main-visual {
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 1000px;
+    margin: auto;
+    z-index: 2;
+    @include common.trans30;
+    @media screen and (max-width: 1480px) {
+        height: 880px;
+    }
+    @media screen and (max-height: 1100px) {
+        height: 840px;
+    }
+    @media screen and (max-height: 960px) {
+        height: 750px;
+    }
+    @media screen and (max-height: 850px) {
+        height: 640px;
+    }
+    @include mixins.max-screen(mixins.$lg) {
+        height: 640px;
+    }
+    @include mixins.max-screen(mixins.$md) {
+        top: 100px;
+        height: 600px;
+    }
+    @include mixins.max-screen(mixins.$sm) {
+        height: 500px;
+    }
+    @include mixins.max-screen(mixins.$xs) {
+        top: 90px;
+        height: 450px;
+    }
+    .visual {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        @include common.trans20;
+        @include mixins.max-screen(mixins.$md) {
+            // MAX- タブ
+        }
+        &.main2,
+        &.main3 {
+            opacity: 0;
+        }
+        &.main1 {
+        }
+        .main-inner {
+            position: absolute;
+            bottom: -40px;
+            left: 15px;
+            width: 80%;
+            max-width: 730px;
+            text-align: left;
+            background-color: #fff;
+            border-bottom: 3px solid #231815;
+            padding: 15px 2em;
+            @include mixins.max-screen(mixins.$lg) {
+            }
+            @include mixins.max-screen(mixins.$md) {
+                // MAX- タブ
+                left: 5px;
+                padding: 15px 1em;
+            }
+            @include mixins.max-screen(mixins.$sm) {
+                width: 88%;
+            }
+            .date {
+                font-size: 13px;
+                letter-spacing: 0.25em;
+                color: #9fa0a0;
+            }
+            .company {
+                font-size: 14px;
+                letter-spacing: 0.2em;
+                color: #9fa0a0;
+                margin-bottom: 5px;
+            }
+            h2,
+            h3 {
+                font-size: 26px;
+                line-height: 1.6;
+                letter-spacing: 0.2em;
+                color: common.$main-color;
+                @include mixins.max-screen(mixins.$lg) {
+                    font-size: 24px;
+                }
+                @include mixins.max-screen(mixins.$md) {
+                    // MAX- タブ
+                    font-size: 24px;
+                    letter-spacing: 0.1em;
+                    line-height: 1.5;
+                }
+                @include mixins.max-screen(mixins.$sm) {
+                    // MAX- スマホL
+                    font-size: 22px;
+                }
+                @include mixins.max-screen(mixins.$xs) {
+                    // MAX- スマホ
+                    font-size: 20px;
+                }
+            }
+            img {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 170px;
+                right: 0;
+                margin: auto;
+                @include mixins.max-screen(mixins.$lg) {
+                    // MAX- PCタブL
+                    width: 680px;
+                }
+                @media screen and (max-height: 900px) {
+                    width: 680px;
+                }
+                @media screen and (max-height: 750px) {
+                    width: 620px;
+                }
+                @include mixins.max-screen(mixins.$md) {
+                    // MAX- タブ
+                    left: 0px;
+                }
+                &.pc {
+                    @include mixins.max-screen(mixins.$sm) {
+                        // MAX- スマホL
+                        display: none;
+                    }
+                }
+                &.sp {
+                    display: none;
+                    @include mixins.max-screen(mixins.$sm) {
+                        // MAX- スマホL
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+    .btn-area {
+        position: absolute;
+        bottom: 10px;
+        right: 15px;
+        @include mixins.max-screen(mixins.$md) {
+            top: 20px;
+            bottom: auto;
+        }
+        a {
+            position: relative;
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            padding-top: 6px;
+            float: left;
+            display: block;
+            font-size: 26px;
+            font-family: a-otf-midashi-go-mb31-pr6n, sans-serif;
+            line-height: 1;
+            letter-spacing: 0;
+            color: #fff;
+            @include mixins.max-screen(mixins.$md) {
+                // MAX- タブ
+                font-size: 25px;
+            }
+            @include mixins.max-screen(mixins.$sm) {
+                // MAX- スマホL
+                font-size: 24px;
+            }
+            @include mixins.max-screen(mixins.$xs) {
+                // MAX- スマホ
+                font-size: 22px;
+                line-height: 1.4;
+            }
+            svg {
+                display: none;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 40px;
+                height: 40px;
+                transform: rotateZ(-90deg);
+            }
+            &.on {
+                svg {
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+.gry {
+    position: relative;
+    background-color: #f2f2f2;
+    padding: 220px 1em 20px;
+    z-index: 1;
+    @include mixins.max-screen(mixins.$sm) {
+        // MAX- スマホL
+    }
+    h2 {
+        font-size: 52px;
+        line-height: 1;
+        letter-spacing: 0.1em;
+        color: common.$main-color;
+        margin-bottom: 22px;
+        @include mixins.max-screen(mixins.$md) {
+            // MAX- タブ
+            font-size: 50px;
+        }
+        @include mixins.max-screen(mixins.$sm) {
+            // MAX- スマホL
+            font-size: 46px;
+        }
+        @include mixins.max-screen(mixins.$xs) {
+            // MAX- スマホ
+            font-size: 44px;
+        }
+        span {
+            display: block;
+            font-size: 17px;
+            font-family: a-otf-gothic-bbb-pr6n, sans-serif;
+            font-weight: 400;
+            line-height: 1.8;
+            letter-spacing: 0.1em;
+            color: common.$main-color;
+            padding-left: 3px;
+            margin-top: 3px;
+            @include mixins.max-screen(mixins.$sm) {
+                // MAX- スマホL
+                font-size: 16px;
+            }
+            @include mixins.max-screen(mixins.$xs) {
+                // MAX- スマホ
+                font-size: 15px;
+            }
+        }
+    }
+}
+
+.wht {
+    position: relative;
+    background-color: #fff;
+    padding: 100px 1em;
+    z-index: 1;
+    @include mixins.max-screen(mixins.$md) {
+        // MAX- タブ
+        padding: 80px 1em 0px;
+    }
+    h2 {
+        font-size: 52px;
+        line-height: 1;
+        letter-spacing: 0.1em;
+        color: common.$main-color;
+        margin-bottom: 22px;
+        @include mixins.max-screen(mixins.$md) {
+            // MAX- タブ
+            font-size: 50px;
+        }
+        @include mixins.max-screen(mixins.$sm) {
+            // MAX- スマホL
+            font-size: 46px;
+        }
+        @include mixins.max-screen(mixins.$xs) {
+            // MAX- スマホ
+            font-size: 44px;
+        }
+        span {
+            display: block;
+            font-size: 17px;
+            font-family: a-otf-gothic-bbb-pr6n, sans-serif;
+            font-weight: 400;
+            line-height: 1.8;
+            letter-spacing: 0.1em;
+            color: common.$main-color;
+            padding-left: 3px;
+            margin-top: 3px;
+            @include mixins.max-screen(mixins.$sm) {
+                // MAX- スマホL
+                font-size: 16px;
+            }
+            @include mixins.max-screen(mixins.$xs) {
+                // MAX- スマホ
+                font-size: 15px;
+            }
+        }
+    }
+}
+
+.comming {
+    font-size: 28px;
+    line-height: 1.5;
+    letter-spacing: 0.1em;
+    color: common.$main-color;
+    text-align: center;
+    margin: 45px 0;
+    @include mixins.max-screen(mixins.$sm) {
+        // MAX- スマホL
+        font-size: 26px;
+    }
+    @include mixins.max-screen(mixins.$xs) {
+        // MAX- スマホ
+        font-size: 24px;
+    }
+}
+
+.container {
+    overflow: hidden;
+    position: relative;
+    background-color: #fff;
+    @include mixins.max-screen(mixins.$sm) {
+        // MAX- スマホL
+        /*padding: 0px 0 0px;*/
+    }
+}
+
+section {
+    max-width: 1480px;
+    margin: 0 auto;
+    padding: 0 0 80px;
+    .section-inner {
+        max-width: 1280px;
+        padding: 0 1em;
+        margin: 0 auto;
+    }
+}
+
+#news {
+    .item {
+        display: block;
+        box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
+        .img-area {
+            height: 260px;
+            @include mixins.max-screen(mixins.$lg) {
+                // MAX- PCタブL
+                height: 180px;
+            }
+        }
+        .stc-area {
+            background-color: #fff;
+            padding: 15px 1em 5px;
+            h3 {
+                height: 52px;
+                font-size: 15px;
+                font-weight: normal;
+                font-family: a-otf-gothic-bbb-pr6n, sans-serif;
+                line-height: 1.5;
+                letter-spacing: 0.1em;
+                color: common.$main-color;
+                margin-bottom: 10px;
+                @media screen and (max-width: 768px) {
+                    font-size: 14px;
+                }
+            }
+            .date {
+                font-size: 12px;
+                letter-spacing: 0.05em;
+                color: #9fa0a0;
+                text-align: center;
+            }
+        }
+    }
+}
+
+#product {
+    padding: 0 0 100px;
+    .tag-area {
+        margin-bottom: 10px;
+        a {
+            display: inline-block;
+            vertical-align: top;
+            font-size: 16px;
+            letter-spacing: 0.1em;
+            line-height: 1.2;
+            color: #fff;
+            background-color: common.$main-color;
+            border: 1px solid common.$main-color;
+            padding: 5px 1em;
+            margin-right: 12px;
+            margin-bottom: 12px;
+            &:hover {
+                color: common.$main-color;
+                background-color: #fff;
+            }
+        }
+    }
+    .item-area {
+        max-width: 500px;
+        padding: 0 1em;
+        line-height: 0;
+        margin: 0 auto;
+    }
+    .owl-item.active .item {
+        width: 100%;
+        margin: 0 auto;
+        .img-area {
+            height: 340px;
+            @include mixins.max-screen(mixins.$lg) {
+                // MAX- PCタブL
+                height: 300px;
+            }
+        }
+        .stc-area {
+            h3 {
+                font-family: a-otf-midashi-go-mb31-pr6n, sans-serif;
+                font-weight: 600;
+                font-size: 17px;
+                @media screen and (max-width: 768px) {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+    .owl-carousel .owl-prev {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: auto;
+        left: -20px;
+        width: 60px;
+        height: 60px;
+        background: url("../img/gry-arrow_blk.svg") no-repeat center center !important;
+        @include mixins.max-screen(mixins.$sm) {
+            // MAX- スマホL
+            left: -10px;
+            width: 48px;
+            height: 48px;
+        }
+    }
+    .owl-carousel .owl-next {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: auto;
+        right: -20px;
+        width: 60px;
+        height: 60px;
+        background: url("../img/gry-arrow_blk.svg") no-repeat center center !important;
+        @include mixins.max-screen(mixins.$sm) {
+            // MAX- スマホL
+            right: -10px;
+            width: 48px;
+            height: 48px;
+        }
+    }
+    .owl-carousel .owl-item {
+        float: none;
+        display: inline-block;
+        vertical-align: middle;
+    }
+    .item {
+        position: relative;
+        display: block;
+        width: 84%;
+        background-color: #fff;
+        padding: 10px 1em 0;
+        margin: 0 auto;
+        .img-area {
+            height: 240px;
+            @include mixins.max-screen(mixins.$lg) {
+                // MAX- PCタブL
+                height: 200px;
+            }
+        }
+        .stc-area {
+            background-color: #fff;
+            padding: 8px 0 5px;
+            h3 {
+                height: 52px;
+                font-size: 16px;
+                font-weight: normal;
+                font-family: a-otf-gothic-bbb-pr6n, sans-serif;
+                line-height: 1.5;
+                letter-spacing: 0.1em;
+                color: common.$main-color;
+                text-align: center;
+                margin-bottom: 10px;
+                @media screen and (max-width: 768px) {
+                    font-size: 15px;
+                }
+            }
+            .company {
+                font-size: 14px;
+                letter-spacing: 0.2em;
+                color: #9fa0a0;
+                text-align: center;
+                margin-bottom: 8px;
+            }
+        }
+    }
+}
+
+.fix-boxed {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 0;
+    z-index: 100;
+    &:before {
+        content: "";
+        display: inline-block;
+        vertical-align: middle;
+        width: 0;
+        height: 100%;
+    }
+    .boxed-inner {
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        width: 96%;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+    .movie-box {
+        width: 100%;
+        height: 0;
+        overflow: hidden;
+        padding-top: 56.25%;
+        .close-btn {
+            position: absolute;
+            top: 0px;
+            right: 0;
+            font-size: 50px;
+            font-family: a-otf-midashi-go-mb31-pr6n, sans-serif;
+            font-weight: 600;
+            line-height: 0;
+            color: #fff;
+        }
+        iframe {
+            position: absolute;
+            top: 30px;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            margin: auto;
+            &:hover {
+                box-shadow: none;
+                transform: scale(1, 1);
+            }
+        }
+    }
+    .img-box {
+        width: 100%;
+        height: 0%;
+        overflow: hidden;
+        padding-top: 56.25%;
+        .close-btn {
+            position: absolute;
+            top: 0px;
+            right: 0;
+            font-size: 140%;
+            color: #fff;
+        }
+        img {
+            position: absolute;
+            top: 30px;
+            left: 0;
+            right: 0;
+            width: auto;
+            height: auto;
+            margin: auto;
+        }
+    }
+}
+
+#movie {
+    padding: 0 0 100px;
+    .item-area {
+        max-width: 500px;
+        padding: 0 1em;
+        line-height: 0;
+        margin: 0 auto;
+    }
+    .owl-item .item {
+    }
+    .owl-item.active .item {
+        width: 100%;
+        margin: 0 auto;
+        &:before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 0;
+        }
+        &:after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 80px;
+            height: 80px;
+            background: url("../img/play_ic.svg") no-repeat;
+            margin: auto;
+            z-index: 1;
+        }
+    }
+    .owl-carousel .owl-prev {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: auto;
+        left: -20px;
+        width: 60px;
+        height: 60px;
+        background: url("../img/gry-arrow_blk.svg") no-repeat center center !important;
+        @include mixins.max-screen(mixins.$sm) {
+            // MAX- スマホL
+            left: -10px;
+            width: 48px;
+            height: 48px;
+        }
+    }
+    .owl-carousel .owl-next {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: auto;
+        right: -20px;
+        width: 60px;
+        height: 60px;
+        background: url("../img/gry-arrow_blk.svg") no-repeat center center !important;
+        @include mixins.max-screen(mixins.$sm) {
+            // MAX- スマホL
+            right: -10px;
+            width: 48px;
+            height: 48px;
+        }
+    }
+    .owl-carousel .owl-item {
+        float: none;
+        display: inline-block;
+        vertical-align: middle;
+    }
+    .item {
+        position: relative;
+        display: block;
+        width: 84%;
+        margin: 0 auto;
+        .img-area {
+            height: 200px;
+            @include mixins.max-screen(mixins.$lg) {
+                // MAX- PCタブL
+                height: 140px;
+            }
+        }
+    }
+}
+
+button:focus {
+    outline: 0;
+}
+
+#project {
+    .item-area {
+        text-align: center;
+        iframe {
+            display: inline-block;
+            vertical-align: top;
+            margin-right: 20px;
+            margin-bottom: 20px;
+            @include mixins.max-screen(mixins.$sm) {
+                // MAX- スマホL
+                display: block;
+                margin: 0 auto 20px;
+            }
+            &:last-child {
+                margin-right: 0;
+                @include mixins.max-screen(mixins.$sm) {
+                    // MAX- スマホL
+                    margin: 0 auto 20px;
+                }
+            }
+        }
+    }
+}
+
+#company {
+    padding: 0;
+    .item-area {
+        overflow: hidden;
+        max-width: 1080px;
+        margin: 0 auto;
+        a {
+            position: relative;
+            overflow: hidden;
+            float: left;
+            width: 23%;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-align-items: center;
+            align-items: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            height: 60px;
+            font-size: 16px;
+            font-family: a-otf-midashi-go-mb31-pr6n, sans-serif;
+            font-weight: 600;
+            line-height: 1.4;
+            letter-spacing: 0em;
+            color: common.$main-color;
+            text-align: center;
+            border: 1px solid common.$main-color;
+            padding: 15px 1em;
+            margin-right: 2.6%;
+            margin-bottom: 30px;
+            @include mixins.max-screen(mixins.$lg) {
+                // MAX- PCタブL
+                width: 31.6%;
+                margin-right: 2%;
+            }
+            @include mixins.max-screen(mixins.$sm) {
+                // MAX- スマホL
+                width: 49%;
+                font-size: 15px;
+            }
+            &:nth-child(4n) {
+                margin-right: 0;
+                @include mixins.max-screen(mixins.$lg) {
+                    // MAX- PCタブL
+                    margin-right: 2%;
+                }
+                @include mixins.max-screen(mixins.$sm) {
+                    // MAX- スマホL
+                    margin-right: 0;
+                }
+            }
+            &:nth-child(3n) {
+                @include mixins.max-screen(mixins.$lg) {
+                    // MAX- PCタブL
+                    margin-right: 0;
+                }
+                @include mixins.max-screen(mixins.$sm) {
+                    // MAX- スマホL
+                    margin-right: 2%;
+                }
+            }
+            &:nth-child(2n) {
+                @include mixins.max-screen(mixins.$sm) {
+                    // MAX- スマホL
+                    margin-right: 0;
+                }
+            }
+            span {
+                position: absolute;
+                top: -5px;
+                left: -5px;
+                font-size: 14px;
+                font-family: a-otf-midashi-go-mb31-pr6n, sans-serif;
+                font-weight: 600;
+                line-height: 1.4;
+                letter-spacing: 0.1em;
+                color: #fff;
+                background-color: common.$main-color;
+                padding: 2px 1em;
+                -webkit-transform: rotateZ(-8deg);
+                transform: rotateZ(-8deg);
+            }
+            &:before {
+                content: "";
+                display: block;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: -100%;
+                width: 100%;
+                background-color: common.$main-color;
+                @include common.trans10;
+                z-index: -1;
+            }
+            &:hover {
+                color: #fff;
+                &:before {
+                    left: 0;
+                }
+            }
+        }
+    }
+}

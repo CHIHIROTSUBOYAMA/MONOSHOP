@@ -1,0 +1,61 @@
+
+
+
+// $MQ_OLD_MOBILE_PORTRAIT         :   320px !default;
+// $MQ_OLD_MOBILE_LANDSCAPE        :   480px !default;
+
+// $MQ_MODERN_MOBILE_PORTRAIT      :   320px !default; // 640 resolution.
+// $MQ_MODERN_MOBILE_LANDSCAPE     :   480px !default; // 960 resolution.
+
+// $MQ_FUTURE_MOBILE_PORTRAIT      :   640px !default; // new iPhone(5?).
+// $MQ_FUTURE_MOBILE_LANDSCAPE     :  1136px !default; // new iPhone(5?).
+
+// $MQ_OLD_TABLET_PORTRAIT         :   768px !default; // 1 or 2.
+// $MQ_OLD_TABLET_LANDSCAPE        :  1024px !default; // 1 or 2.
+
+// $MQ_MODERN_TABLET_PORTRAIT      :   768px !default; // new iPad: 1,536 resolution.
+// $MQ_MODERN_TABLET_LANDSCAPE     :  1024px !default; // new iPad: 2,048 resolution.
+
+// $MQ_DESCTOP_NARROW              :  1024px !default;
+// $MQ_DESCTOP_MODERN              :  1280px !default;
+// $MQ_DESCTOP_WIDE                :  1600px !default;
+// $MQ_DESCTOP_HD                  :  1920px !default;
+
+$mqss: 0px;
+$xxs:321px;
+$xs:480px;
+$sm:640px;
+$md:960px;
+$lg:1280px;
+$xl:1600px;
+
+@mixin max-screen($break-point) {
+  @media screen and (max-width: $break-point) {
+    @content;
+  }
+}
+
+@mixin min-screen($break-point) {
+  @media screen and (min-width: $break-point) {
+    @content;
+  }
+}
+
+@mixin screen($break-point-min, $break-point-max) {
+  @media screen and (min-width: $break-point-min) and (max-width: $break-point-max) {
+    @content;
+  }
+}
+
+
+.row-eq-height {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+@mixin fontsize($px){
+  font-size: $px + px;
+  $aa : $px / 10;
+  font-size: $aa + rem;
+}
